@@ -7,7 +7,7 @@ const secretAccess = crypto.randomBytes(64).toString('hex')
 function authenticateUser(socket, next){
     socket.emit('IPerror', 123)
     const AllowedIPs = [
-        '::2',
+        '::1',
         '172.103.178.235',
     ]
     const forwardedIP = socket.handshake.headers['x-forwarded-for']
