@@ -22,8 +22,8 @@ const router = require('./routes/router.js')
 app.use(router)
 
 //WEBSOCKET SERVER (REAL TIME COMMUNICATION) BI DIRECTIONAL (SERVER PUSHING)
-const socketIO = require('./websocket/socketIO.js')
-const { builtinModules } = require('module')
+//const socketIO = require('./websocket/socketIO.js')
+//const { builtinModules } = require('module')
 
 const httpServer = http.createServer(app) //APP is just a middleware function.... the server needs to be created... this server still ruled by app
 const chat_Server = new io.Server(httpServer,{
@@ -38,7 +38,7 @@ chat_Server.on('connection', (socket)=>{
     socket.on("new-message", (msg)=>{
         console.log(msg)
 
-        chat_server.emit("broadcast", msg)
+        chat_Server.emit("broadcast", msg)
     })}
 )
 
