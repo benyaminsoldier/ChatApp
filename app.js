@@ -22,7 +22,7 @@ const router = require('./routes/router.js')
 app.use(router)
 
 //WEBSOCKET SERVER (REAL TIME COMMUNICATION) BI DIRECTIONAL (SERVER PUSHING)
-//const socketIO = require('./websocket/socketIO.js')
+const socketIO = require('./websocket/socketIO.js')
 //const { builtinModules } = require('module')
 
 const httpServer = http.createServer(app) //APP is just a middleware function.... the server needs to be created... this server still ruled by app
