@@ -2,11 +2,16 @@ const express = require('express')
 const router = express.Router()
 const middlewares = require('../controls/middlewares.js')
 
-router.get('/', (req,res)=>{
-    console.log('hi this is the router responding by default')
-    console.log('Request method:', req.method)
-    console.log('Request headers:', req.headers)
-    console.log(req.body)
-})
+
+router.head('/', (req, res) => {
+    console.log('HEAD request received');
+    res.sendStatus(200);  // Send a 200 OK status without a body
+});
+
+// Handle GET requests to the root route
+router.get('/', (req, res) => {
+    console.log('GET request received');
+    res.send('GET response');
+});
 
 module.exports = router
