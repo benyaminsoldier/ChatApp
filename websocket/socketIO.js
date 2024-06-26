@@ -8,7 +8,7 @@ function authenticateUser(socket, next){
     socket.emit('IPerror', 123)
     const AllowedIPs = [
         '::1',
-        '172.103.178.235',
+        '172.103.178.236',
     ]
     const forwardedIP = socket.handshake.headers['x-forwarded-for']
     console.log('proxyIP: '+ forwardedIP)
