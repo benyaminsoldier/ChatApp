@@ -33,7 +33,7 @@ const chat_Server = new io.Server(httpServer,{
 //chat_Server.use(socketIO.authenticateUser)
 //chat_Server.on('error', socketIO.handleErrors)
 chat_Server.on('connection', (socket)=>{
-    const chat_server = require('../app.js')
+ 
     console.log('Websocket enabled...')
     socket.on("new-message", (msg)=>{
         console.log(msg)
