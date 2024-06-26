@@ -17,7 +17,7 @@ function authenticateUser(socket, next){
     try{
         if(!AllowedIPs.includes((originalClientIP))){
             const IP_error = new Error('Access denied: IP not allowed.')
-            socket.emit('IPerror', {error : error.message})
+            socket.emit('IPerror', {error : IP_error.message})
             socket.disconnect(true)
             throw IP_error
         }
