@@ -30,7 +30,7 @@ const chat_Server = new io.Server(httpServer,{
     cors : '*', //Allows requests from any domain
 }) 
 
-//chat_Server.use(socketIO.authenticateUser)
+chat_Server.use(socketIO.authenticateUser)
 //chat_Server.on('error', socketIO.handleErrors)
 chat_Server.on('connection', (socket)=>{
  
