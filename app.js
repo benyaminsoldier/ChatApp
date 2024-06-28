@@ -31,17 +31,7 @@ const chat_Server = new io.Server(httpServer,{
 }) 
 
 chat_Server.use(socketIO.authenticateUser)
-//chat_Server.on('error', socketIO.handleErrors)
-chat_Server.on('connection', (socket)=>{
- 
-    console.log('Websocket enabled...')
-    socket.on("new-message", (msg)=>{
-        console.log(msg)
-
-        chat_Server.emit("broadcast", msg)
-    })}
-)
-
+chat_Server.on('connection', socketIO.establishConnection)
 
 
 httpServer.listen(7000 , ()=>{
