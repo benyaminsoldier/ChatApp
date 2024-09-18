@@ -19,6 +19,7 @@ const AssumeRole =  async ()=>{
         
     }
     catch(error){
+      console.log("Problem assuming role")
           console.log(error)
       }
 
@@ -69,6 +70,7 @@ const GetTemporaryCredentials = async () => {
     //console.log(response);
     return response.Credentials
   } catch (err) {
+    console.log("Problem getting credentials")
     console.error(err);
   }
 };
